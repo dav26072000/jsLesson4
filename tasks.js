@@ -80,3 +80,41 @@ function findNumbers(str) {
 
   return Number(maxNum) + Number(maxNum2);
 }
+
+// 6.Write a function which receives two strings and removes appearances of the second string from the first
+// one.
+
+function removeWord(str, word) {
+  let howMach = str.split("bob").length - 1; // how many times
+  let newStr;
+  for (let i = 0; i < howMach; i++) {
+    newStr = str.replace(word, "");
+    str = newStr;
+  }
+  console.log(newStr);
+}
+
+// 7. Write a function to compute a new string from the given one by moving the first charto come afterthe
+// next two chars, so "abc" yields "bca". Repeat this process for each subsequent group of 3 chars. Ignore
+// any group of fewerthan 3 chars at the end.
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+function reverseThreeWords(str) {
+  str = str.split("");
+  num = 0;
+  let endArr = [];
+  let newArr = [];
+  console.log(str);
+  for (let i = 0; i < str.length; i++) {
+    newArr.push(str[i]);
+    num++;
+    if (num === 3) {
+      endArr.push(newArr.reverse().join(""));
+      newArr = [];
+      num = 0;
+    }
+  }
+  return endArr.join("");
+}
