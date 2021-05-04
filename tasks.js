@@ -1,4 +1,4 @@
-// Given an array of numbers. Write a function to separate odd and even numbers in different arrays.
+//1 Given an array of numbers. Write a function to separate odd and even numbers in different arrays.
 function separateArr(arr) {
   let evenArr = [];
   let oddArr = [];
@@ -12,7 +12,7 @@ function separateArr(arr) {
   return [evenArr, oddArr];
 }
 
-// Write a function that calculates sum, difference, multiplication and division between given array elements
+//2 Write a function that calculates sum, difference, multiplication and division between given array elements
 // depending on passed operation symbol. Write appropriate function for each operation.
 
 function calcWithSymbol(arr, symbol) {
@@ -37,7 +37,7 @@ function calcWithSymbol(arr, symbol) {
   }
 }
 
-// Given a phone number. Write a function to clean it up, so it is valid. The rules are as follows:
+//3 Given a phone number. Write a function to clean it up, so it is valid. The rules are as follows:
 function phoneNumber(str) {
   let phone = /^[\+]?\d{10}$/im;
   if (phone.test(str)) {
@@ -46,4 +46,24 @@ function phoneNumber(str) {
     return "invalid";
   }
 }
-console.log(phoneNumber("+0987220544"));
+
+//4 Given a word and a list of possible anagrams, select the correct sublist.
+function findWords(str, arr) {
+  str = str.split("");
+  let answer = [];
+  for (const arrEL of arr) {
+    let newArrEl = arrEL.split("");
+    let compare = 0;
+    for (const strEl of str) {
+      for (const eachNewArr of newArrEl) {
+        if (eachNewArr === strEl) {
+          compare++;
+        }
+      }
+      if (compare === str.length) {
+        answer.push(arrEL);
+      }
+    }
+  }
+  return answer;
+}
