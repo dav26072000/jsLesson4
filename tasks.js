@@ -37,4 +37,13 @@ function calcWithSymbol(arr, symbol) {
   }
 }
 
-calcWithSymbol([10, 20, 30], "/");
+// Given a phone number. Write a function to clean it up, so it is valid. The rules are as follows:
+function phoneNumber(str) {
+  let phone = /^[\+]?\d{10}$/im;
+  if (phone.test(str)) {
+    return "valid";
+  } else {
+    return "invalid";
+  }
+}
+console.log(phoneNumber("+0987220544"));
