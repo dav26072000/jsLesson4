@@ -67,3 +67,16 @@ function findWords(str, arr) {
   }
   return answer;
 }
+
+// 5 Write a function, which receives a string, finds possible largest numbers in the string and returns their
+// sum.
+function findNumbers(str) {
+  let regex = /\d+/g;
+  let match = str.match(regex);
+
+  let maxNum = String(Math.max(...match));
+  match.splice(match.indexOf(maxNum));
+  let maxNum2 = String(Math.max(...match));
+
+  return Number(maxNum) + Number(maxNum2);
+}
