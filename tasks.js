@@ -118,3 +118,18 @@ function reverseThreeWords(str) {
   }
   return endArr.join("");
 }
+
+//8. Write a function that accepts a string(a sentence) as a parameter and finds the longest word within the
+// string. If there are several words which are the longest ones, print the last word(words can be separated
+//     by space, comma or hyphen).
+
+function longestWord(str) {
+  str = str.split(" ");
+  arr = [];
+  for (let i = 0; i < str.length; i++) {
+    arr[i] = str[i].length;
+  }
+  maxNum = Math.max(...arr);
+  let lastMax = arr.lastIndexOf(maxNum);
+  return str[lastMax];
+}
