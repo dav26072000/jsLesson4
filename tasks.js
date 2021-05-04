@@ -11,3 +11,30 @@ function separateArr(arr) {
   });
   return [evenArr, oddArr];
 }
+
+// Write a function that calculates sum, difference, multiplication and division between given array elements
+// depending on passed operation symbol. Write appropriate function for each operation.
+
+function calcWithSymbol(arr, symbol) {
+  //   console.log(arr.reduce((a, b) => a + b));
+  switch (symbol) {
+    case "+":
+      console.log(arr.reduce((a, b) => a + b));
+      break;
+    case "-":
+      console.log(arr.reduce((a, b) => a - b));
+      break;
+    case "*":
+      console.log(arr.reduce((a, b) => a * b));
+      break;
+    case "/":
+      console.log(arr.reduce((a, b) => a / b));
+      break;
+
+    default:
+      console.log("invalid symbol");
+      break;
+  }
+}
+
+calcWithSymbol([10, 20, 30], "/");
