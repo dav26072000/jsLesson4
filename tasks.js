@@ -147,3 +147,40 @@ function largerThanNum(arr, num) {
 
   return newArr;
 }
+
+// 10.Write a function to find longest substring in a given a string withoutrepeating characters except space
+// character. If there are several,return the last one. Considerthat all letters are lowercase.
+
+function longestSubstr(str) {
+  let maxLongestSubstr = "";
+  for (let i = 1; i < str.length; i++) {}
+}
+
+longestSubstr("bob taa sdfghj opp");
+
+// 11. Write a function, which receives two numbers as arguments and finds all numbers between them such
+// that each digit of the numberis even. The numbers obtained should be printed in a comma-separated
+// sequence on a single line.
+
+function allEvenNumbers(num1, num2) {
+  let numLength;
+  let testNum1 = String(num1);
+  let endArr = [];
+  if (num2 - num1 > 0) {
+    numLength = num2 - num1;
+    for (let index = 0; index < numLength; index++) {
+      if (/[13579]/g.test(testNum1)) {
+        testNum1 = String(Number(testNum1) + 1);
+        continue;
+      } else {
+        endArr.push(testNum1);
+        testNum1 = String(Number(testNum1) + 1);
+      }
+    }
+    return endArr;
+  } else {
+    return false;
+  }
+}
+
+//12.Write a function, which willreceive a number between 0 to 999,999 and spell out that numberin English.
