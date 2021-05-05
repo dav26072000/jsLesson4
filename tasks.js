@@ -222,18 +222,24 @@ function negativeValueProduct(arr) {
         minusArr.push(el);
       }
     }
-
     let maxNum = Math.max(...minusArr);
-    // let maxNum = Math.max(...minusArr[item]);
     endArr.push(maxNum);
   }
   return endArr.reduce((a, b) => a * b);
 }
 
-console.log(
-  negativeValueProduct([
-    [1, 2, 4, -5, -6],
-    [-10, -4, 50],
-    [15, 68, 74, -3],
-  ])
-);
+// 15.Given an object. Invert it (keys become values and values become keys). If there is more than key forthat
+// given value create an array..
+
+function reverseObj(obj) {
+  let endObj = {};
+  for (const [key, value] of Object.entries(obj)) {
+    if (value in obj) {
+      obj[value] = [obj[value], key];
+    } else {
+      endObj[value] = key;
+    }
+  }
+  return endObj;
+}
+console.log(reverseObj({ 1: "a", 2: "b", 3: "b" }));
