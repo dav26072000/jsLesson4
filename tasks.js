@@ -184,3 +184,56 @@ function allEvenNumbers(num1, num2) {
 }
 
 //12.Write a function, which willreceive a number between 0 to 999,999 and spell out that numberin English.
+
+// 13.Write a JavaScript function to get all possible subsets of length 3 of the given array. Assume that all
+// elements in the array are unique.
+
+function allThreLengthArr(arr) {
+  let endArr = [];
+  let arr2 = [...arr];
+
+  if (arr.length >= 3) {
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length; j++) {
+        if (i === j) {
+          continue;
+        }
+        [arr2[i], arr2[j]] = [arr2[j], arr2[i]];
+        arr2 = [arr2[0], arr2[1], arr2[2]];
+        endArr.push(arr2);
+        arr2 = [...arr];
+      }
+    }
+  } else {
+    return arr;
+  }
+  return endArr;
+}
+// 14.Write a function, which receives an array as an argument which elements arrays of numbers. Find
+// product of biggest negative number of each array. If there is not any negative number, ignore that array.
+// Check that items of the given array are arrays.
+
+function negativeValueProduct(arr) {
+  let endArr = [];
+  for (const item in arr) {
+    let minusArr = [];
+    for (const el of arr[item]) {
+      if (el < 0) {
+        minusArr.push(el);
+      }
+    }
+
+    let maxNum = Math.max(...minusArr);
+    // let maxNum = Math.max(...minusArr[item]);
+    endArr.push(maxNum);
+  }
+  return endArr.reduce((a, b) => a * b);
+}
+
+console.log(
+  negativeValueProduct([
+    [1, 2, 4, -5, -6],
+    [-10, -4, 50],
+    [15, 68, 74, -3],
+  ])
+);
